@@ -1,0 +1,9 @@
+{
+  "name": "gsd-breeders",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KaitlynDodds/GSD-Breeder-Site.git",
+  "author": "KaitlynDodds <kadodds.dev@kadodds.com>",
+  "license": "MIT",
+  "private": null
+}
