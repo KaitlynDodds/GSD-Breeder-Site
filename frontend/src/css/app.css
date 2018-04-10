@@ -1,6 +1,62 @@
-.wrapper {
-	width: 75%;
+body {
+	background-color: lightblue;
+}
+
+p {
+	display: block;
+}
+
+.container {
+	width: 90%;
 	margin: 0 auto;
 	padding: 20px;
-	border: 1px solid #aeaeae;
+}
+
+.quote_card {
+	position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    line-height: .5;
+}
+
+.quote {
+	font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.1;
+    position: relative;
+    margin: 0;
+}
+
+.quote:before {
+    content: '"';
+}
+
+.quote:after {
+    content: '"';
+}
+
+.source {
+	font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    text-align: right;
+    margin-right: 4em;
+}
+
+.source:before {
+	content: '-';
+}
+
+.year:before {
+	content: ', ';
+}
+
+.citation {
+    font-style: italic;
+}
+
+.citation:before {
+	content: ', ';
 }
