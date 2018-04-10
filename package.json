@@ -5,5 +5,9 @@
   "repository": "https://github.com/KaitlynDodds/GSD-Breeder-Site.git",
   "author": "KaitlynDodds <kadodds.dev@kadodds.com>",
   "license": "MIT",
-  "private": null
+  "private": null,
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
 }
