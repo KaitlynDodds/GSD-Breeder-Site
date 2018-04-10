@@ -14,6 +14,7 @@ class App extends React.Component {
 			quote: {
 				quote: "The language of friendship is not words, but meanings.",
 				source: "Henry David Thoreau",
+				citation: "Famous Quotes and People",
 				year: 1998
 			}
 		}

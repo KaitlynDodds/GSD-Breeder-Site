@@ -33,14 +33,6 @@ class QuoteCard extends React.Component {
 	}
 
 	buildSource() {
-		/*
-			<span className={styles.citation}>
-				{this.props.quote.citation}
-			</span>
-			<span className={styles.year}>
-				{this.props.quote.year}
-			</span>
-		*/
 
 		return (
 			<p className={styles.source}>
