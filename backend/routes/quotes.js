@@ -33,4 +33,18 @@ router.get('/', (req, res) => {
 });
 
 
+// POST - create new quotes 
+router.post('/', (req, res) => {
+	const quote = req.body.quote;
+	Quote.create(quote)
+		.then(quote => {
+			console.log('New Quote: ', quote);
+			res.sendStatus(200);
+		}).catch(err => {
+			console.log('Error: ', err);
+			res.sendStatus(400);
+		});
+});
+
+
 module.exports = router;

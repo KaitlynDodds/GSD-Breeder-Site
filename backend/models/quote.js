@@ -3,8 +3,14 @@
 const mongoose = require('mongoose');
 
 const quoteSchema = new mongoose.Schema({
-	quote: String,
-	source: String,
+	quote: {
+        type: String,
+        required: true
+    },
+	source: {
+        type: String,
+        required: true
+    },
 	citation: String,
 	year: Number 
 });
