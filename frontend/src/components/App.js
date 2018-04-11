@@ -49,7 +49,7 @@ class App extends React.Component {
 		return (
 			<div className={styles.container}>
 				<QuoteCard quote={this.state.activeQuote} />
-				<button onClick={this.handleNewQuote}>
+				<button className={styles.new_quote_btn} onClick={this.handleNewQuote}>
 					New Quote
 				</button>
 			</div>
