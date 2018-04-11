@@ -7,6 +7,7 @@ class QuoteCard extends React.Component {
 
 	constructor(props) {
 		super(props);
+		
 		this.buildSource = this.buildSource.bind(this);
 		this.year = this.year.bind(this);
 		this.citation = this.citation.bind(this);

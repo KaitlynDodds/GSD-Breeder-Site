@@ -11,19 +11,47 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			quote: {
-				quote: "The language of friendship is not words, but meanings.",
-				source: "Henry David Thoreau",
-				citation: "Famous Quotes and People",
-				year: 1998
-			}
+			quotes: [],
+			activeQuote: ""
 		}
+
+		this.handleNewQuote = this.handleNewQuote.bind(this);
+	}
+
+	componentDidMount() {
+
+		const url = 'http://localhost:3000/quotes';
+
+		fetch(url)
+			.then(results => {
+				return results.json();
+			}).then(quotes => {
+				this.setState({quotes: quotes});
+				this.handleNewQuote();
+			}).catch(err => {
+				console.log('Error: ', err);
+			});
+
+	}
+
+	handleNewQuote() {
+		// gen random number 
+		const randNum = Math.floor(Math.random() * this.state.quotes.length);
+
+		// fetch random quote from state
+		const quote = this.state.quotes[randNum];
+
+		// set state
+		this.setState({activeQuote: quote});
 	}
 
 	render() {
 		return (
 			<div className={styles.container}>
-				<QuoteCard quote={this.state.quote} />
+				<QuoteCard quote={this.state.activeQuote} />
+				<button onClick={this.handleNewQuote}>
+					New Quote
+				</button>
 			</div>
 		);
 	}
