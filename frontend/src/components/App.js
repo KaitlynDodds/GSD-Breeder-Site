@@ -12,10 +12,21 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			quotes: [],
+			colors: [
+				'#F63E02',
+				'#F3B700',
+				'#0A2342',
+				'#F46197',
+				'#8B2635',
+				'#D3EFBD',
+				'#682D63'
+			],
 			activeQuote: ""
 		}
 
 		this.handleNewQuote = this.handleNewQuote.bind(this);
+		this.changeBackgroundColor = this.changeBackgroundColor.bind(this);
+		this.getRandomNumber = this.getRandomNumber.bind(this);
 	}
 
 	componentDidMount() {
@@ -34,15 +45,30 @@ class App extends React.Component {
 
 	}
 
+	getRandomNumber(list) {
+		return Math.floor(Math.random() * list.length);
+	}
+
 	handleNewQuote() {
 		// gen random number 
-		const randNum = Math.floor(Math.random() * this.state.quotes.length);
+		const randNum = this.getRandomNumber(this.state.quotes);
 
 		// fetch random quote from state
 		const quote = this.state.quotes[randNum];
 
 		// set state
 		this.setState({activeQuote: quote});
+
+		this.changeBackgroundColor();
+	}
+
+	changeBackgroundColor() {
+
+		const randNum = this.getRandomNumber(this.state.colors);
+		console.log(randNum);
+
+		document.body.style.backgroundColor = this.state.colors[randNum];
+
 	}
 
 	render() {
