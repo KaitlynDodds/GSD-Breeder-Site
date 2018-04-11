@@ -1,6 +1,7 @@
 'use strict';
 
 const express 		= require('express'),
+	  mongoose		= require('mongoose'),
 	  bodyParser 	= require('body-parser');
 
 const DEFAULT_PORT	= 3000;
@@ -12,6 +13,8 @@ const quoteRoutes 	= require('./routes/quotes');
 
 
 // APP CONFIG ////////////////////
+
+mongoose.connect('mongodb://127.0.0.1/quotes_generator');
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
 

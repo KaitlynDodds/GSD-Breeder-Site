@@ -2,6 +2,9 @@
 
 const express = require('express');
 
+// models
+const Quote = require('../models/quote');
+
 const router = express.Router();
 
 
